@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
+    integrity="sha512-..." crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/boxicons/2.0.7/css/boxicons.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+   <title>Admin</title>
+</head> 
+  
+<body>
+
+    <style>
+        :root{
+            --highlight:#57636;
+        }
+
+        .navbar{
+            border-radius: 32px;
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 400px;
+            margin-left: 400px;
+            box-shadow: 0 14px 28px #8f9cd4, 0 10px #8f9cd4;
+        }
+
+        .list-item{
+            list-style-type: none;
+            flex-basis: 100%;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            color: #555;
+            transform: translateY(0);
+            transition: transform 0.5s ease, opacity 0.2s ease;
+            cursor: pointer;
+        }
+
+        .list-item-name {
+            font-size: 13px;
+            font-weight: 500;
+            position: absolute;
+            transform: translate(0, 50px);
+            transition: transform 0.5s ease, opacity 0.2s ease;
+            opacity: 0;
+        }
+
+        .list-item:hover{
+            color: var(--highlight);
+            transform: translateY(-6px);
+        }
+
+        .list-item:hover .list-item-name{
+            transform:  translateY(20px);
+            opacity: 1;
+        }
+    </style>
+    
+
+    
+
+    <!--side bar naman to brrt brrtt-->
+    <div class="sidebar">
+        <div class="logo-details">
+          <i class='bx bxl-c-plus-plus icon'></i>
+            <div class="logo_name">LTO</div>
+            <i class='bx bx-menu' id="btn" ></i>
+        </div>
+
+        
+        <ul class="nav-list">
+          <li>
+              <i class='bx bx-search' ></i>
+             <input type="text" placeholder="Search...">
+             <span class="tooltip">Search</span>
+          </li>
+          <li>
+            <a href="#">
+              <i class='bx bx-grid-alt'></i>
+              <span class="links_name">Home Page</span>
+            </a>
+             <span class="tooltip">Home Page</span>
+          </li>
+          <li>
+           <a href="#">
+             <i class='bx bx-user' ></i>
+             <span class="links_name">Profile</span>
+           </a>
+           <span class="tooltip">Profile</span>
+         </li>
+         <li>
+           <a href="#">
+             <i class='bx bx-chat' ></i>
+             <span class="links_name">Message</span>
+           </a>
+           <span class="tooltip">Message</span>
+         </li>
+       
+         <li>
+           <a href="#">
+             <i class='bx bx-folder' ></i>
+             <span class="links_name">Documents</span>
+           </a>
+           <span class="tooltip">Documents</span>
+         </li>
+         <li>
+           <a href="#">
+            <i class='bx bx-car'></i>
+             <span class="links_name">Driver</span>
+           </a>
+           <span class="tooltip">Driver</span>
+         </li>
+         
+         <li>
+           <a href="#">
+             <i class='bx bx-cog' ></i>
+             <span class="links_name">Settings</span>
+           </a>
+           <span class="tooltip">Settings</span>
+         </li>
+         <li class="profile">
+             <div class="profile-details">
+               <img src="LTOprofile.png" alt="profileImg">
+               <div class="name_job">
+                 <div class="name">ADMIN</div>
+                 <div class="job">LTO OFFICER</div>
+               </div>
+             </div>
+             <i class='bx bx-log-out' id="log_out" ></i>
+         </li>
+        </ul>
+      </div>
+      <section class="home-section">
+          <div class="text">Dashboard</div>
+
+    <!--nav bar in the html brrt-->
+    
+          <div class="navbar">
+            <li class="list-item">
+              <i class='fa-solid fa-credit-card'></i>
+            
+                    <span class="list-item-name">Payment</span>   
+            </li>
+    
+            <li class="list-item">
+                <i class="fa-solid fa-user">   </i>
+                    <span class="list-item-name">Driver Request</span>   
+            </li>
+            
+            <li class="list-item">
+                <i class="fa-solid fa-gear">   </i>
+                    <span class="list-item-name">Notification</span>   
+            </li>
+            
+            <li class="list-item">
+                <i class="fa-solid fa-car">   </i>
+                    <span class="list-item-name">Vehicle</span>   
+            </li>
+            
+    </div>
+
+
+    <section class="main">
+      <div class="main-top">
+    
+      </div>
+      <div class="main-skills">
+        <div class="card">
+          <i class="fas fa-laptop-code"></i>
+          <h3>Enforcer</h3>
+          <p>LTO enforcer on Duty.</p>
+          <button class="popup-button" data-popup="1">Continue</button>
+        </div>
+        <div class="card">
+            <i class="fa-solid fa-glasses"></i>
+          <h3>Issued Ticket</h3>
+          <p>List of issued ticket by enforcer.</p>
+          <button class="popup-button" data-popup="2">Continue</button>
+        </div>
+        <div class="card">
+            <i class="fa-solid fa-book"></i>
+          <h3>Driver Status</h3>
+          <p>Status of the drivers.</p>
+          <button class="popup-button" data-popup="3">Continue</button>
+        </div>
+        <div class="card">
+            <i class="fa-solid fa-bookmark"></i>
+          <h3>Pending Violation</h3>
+          <p>Driver pending violation.</p>
+          <button class="popup-button" data-popup="4">Continue</button>
+        </div>
+      </div>
+      </section>
+
+
+      <table>
+        <thead>
+          <tr>
+            <th>Driver Name</th>
+            <th>Status</th>
+            <th>Violation</th>
+            <th>Payment Status</th>
+            <th>Restriction</th>
+          </tr>
+        <thead>
+        <tbody>
+          <tr>
+            <td>Bradly Vince Gorgonio</td>
+            <td>Registered</td>
+            <td>043 Reckless Driving</td>
+            <td>Paid</td>
+            <td>None</td>
+          </tr>
+             <tr>
+            <td>John Smith Paul</td>
+            <td>Registered</td>
+            <td>061 No Parking</td>
+            <td>Paid</td>
+            <td>None</td>
+          </tr>
+             <tr>
+            <td>John Smith</td>
+            <td>Not Registered0mt5</td>
+            <td>012 OverSpeeding</td>
+            <td>Pending</td>
+            <td>None</td>
+          </tr>
+             <tr>
+            <td>Alvin Ken</td>
+            <td>Registered</td>
+            <td>031 Traffic Avoidance</td>
+            <td>Paid</td>
+            <td>None</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+<link href="style.css" rel="stylesheet">
+        
+      <blockquote> Responsive Table </blockquote>
+
+      <div class="popup-overlay" id="popupOverlay">
+        <!-- Pop-up forms for buttons 1, 2, 3, and 4 -->
+        <div class="popup-form" id="popupForm1">
+          <span class="popup-close-button" onclick="closePopup('1')">&#10006;</span>
+          <h2>Enforcer on Duty</h2>
+        <h3 style="text-align: center; margin-bottom: 10px;">Total enforcer: 10</h3>
+        <div style="overflow: auto; max-height: 300px;">
+            <table style="margin: 0 auto; border-collapse: collapse; border: 1px solid black; width: 100%;">
+                <tr>
+                    <th style="text-align: left; border: 1px solid black; padding: 5px;">Enforcer Name</th>
+                    <th style="text-align: left; border: 1px solid black; padding: 5px;">Deputation No</th>
+                </tr>
+                <!-- Sample Students (Replace with your data) -->
+                <tr>
+                    <td style="border: 1px solid black; padding: 5px;">Lyca Cupa  Lastimoso</td>
+                    <td style="border: 1px solid black; padding: 5px;">2032-1232322</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 5px;">Jacquelyn Vivar</td>
+                    <td style="border: 1px solid black; padding: 5px;">2034-1234343</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 5px;">John Paul Author</td>
+                    <td style="border: 1px solid black; padding: 5px;">2044-1234543</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 5px;">Syd Carlo Bautista</td>
+                    <td style="border: 1px solid black; padding: 5px;">2050-1234556</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 5px;">John Smith</td>
+                    <td style="border: 1px solid black; padding: 5px;">2051-1232123</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 5px;">Henry Ken</td>
+                    <td style="border: 1px solid black; padding: 5px;">2052-1235666</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 5px;">Roxanne Ara</td>
+                    <td style="border: 1px solid black; padding: 5px;">2053-1235423</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 5px;">Billy James</td>
+                    <td style="border: 1px solid black; padding: 5px;">2054-1234544</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 5px;">Ken Alvin</td>
+                    <td style="border: 1px solid black; padding: 5px;">2055-1234545</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 5px;">John Jones</td>
+                    <td style="border: 1px solid black; padding: 5px;">2056-1238653</td>
+                </tr>
+            </table>
+        </div>
+          <!-- Add your form elements for button 1 here -->
+        </div>
+        <div class="popup-form" id="popupForm2">
+          <span class="popup-close-button" onclick="closePopup('2')">&#10006;</span>
+          <h2 style="text-align: center; margin-bottom: 10px;">Enforcer Issued Ticket</h2>  
+        <h3 style="text-align: center; margin-bottom: 10px;">Total Issued: 134</h3>
+        <div style="overflow: auto; max-height: 300px;">
+            <table style="margin: 0 auto; border-collapse: collapse; border: 1px solid black; width: 100%;">
+                <tr>
+                    <th style="text-align: left; border: 1px solid black; padding: 5px;">Enfocer Names</th>
+                    <th style="text-align: left; border: 1px solid black; padding: 5px;">Number of issued Ticket by enforcer</th>
+                </tr>
+                <!-- Sample Students (Replace with your data) -->
+                <tr>
+                  <td style="border: 1px solid black; padding: 5px;">Lyca Cupa  Lastimoso</td>
+                  <td style="border: 1px solid black; padding: 5px;">12</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid black; padding: 5px;">Jacquelyn Vivar</td>
+                  <td style="border: 1px solid black; padding: 5px;">9</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid black; padding: 5px;">John Paul Author</td>
+                  <td style="border: 1px solid black; padding: 5px;">17</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid black; padding: 5px;">Syd Carlo Bautista</td>
+                  <td style="border: 1px solid black; padding: 5px;">7</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid black; padding: 5px;">John Smith</td>
+                  <td style="border: 1px solid black; padding: 5px;">11</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid black; padding: 5px;">Henry Ken</td>
+                  <td style="border: 1px solid black; padding: 5px;">15</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid black; padding: 5px;">Roxanne Ara</td>
+                  <td style="border: 1px solid black; padding: 5px;">4</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid black; padding: 5px;">Billy James</td>
+                  <td style="border: 1px solid black; padding: 5px;">18</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid black; padding: 5px;">Ken Alvin</td>
+                  <td style="border: 1px solid black; padding: 5px;">26</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid black; padding: 5px;">John Jones</td>
+                  <td style="border: 1px solid black; padding: 5px;">15</td>
+              </tr>
+            </table>
+        </div>
+          <!-- Add your form elements for button 2 here -->
+        </div>
+        <div class="popup-form" id="popupForm3">
+          <span class="popup-close-button" onclick="closePopup('3')">&#10006;</span>
+          <h2>Driver Status</h2>
+          <!-- Add your form elements for button 3 here -->
+        <h3 style="text-align: center; margin-bottom: 10px;">Total Driver: 10</h3>
+        <div style="overflow: auto; max-height: 300px;">
+            <table style="margin: 0 auto; border-collapse: collapse; border: 1px solid black; width: 100%;">
+              <th style="text-align: left; border: 1px solid black; padding: 5px;">Driver Name</th>
+              <th style="text-align: left; border: 1px solid black; padding: 5px;">License No</th>
+              <th style="text-align: left; border: 1px solid black; padding: 5px;">Exp Date</th>
+              <th style="text-align: left; border: 1px solid black; padding: 1px;">Agency Code</th>
+
+          </tr>
+          <!-- Sample Students (Replace with your data) -->
+          <tr>
+              <td style="border: 1px solid black; padding: 5px;">Lyca Cupa  Lastimoso</td>
+              <td style="border: 1px solid black; padding: 5px;">2032-1232322</td>
+              <td style="border: 1px solid black; padding: 5px;">2025/03/31</td>
+              <td style="border: 1px solid black; padding: 5px;">N32</td>
+
+          </tr>
+          <tr>
+              <td style="border: 1px solid black; padding: 5px;">Jacquelyn Vivar</td>
+              <td style="border: 1px solid black; padding: 5px;">2034-1234343</td>
+              <td style="border: 1px solid black; padding: 5px;">2025/02/20</td>
+              <td style="border: 1px solid black; padding: 5px;">N33</td>
+
+          </tr>
+          <tr>
+              <td style="border: 1px solid black; padding: 5px;">John Paul Author</td>
+              <td style="border: 1px solid black; padding: 5px;">2044-1234543</td>
+              <td style="border: 1px solid black; padding: 5px;">2024/01/06</td>
+              <td style="border: 1px solid black; padding: 5px;">N34</td>
+
+          </tr>
+          <tr>
+              <td style="border: 1px solid black; padding: 5px;">Syd Carlo Bautista</td>
+              <td style="border: 1px solid black; padding: 5px;">2050-1234556</td>
+              <td style="border: 1px solid black; padding: 5px;">2026/11/02</td>
+              <td style="border: 1px solid black; padding: 5px;">N35</td>
+
+          </tr>
+          <tr>
+              <td style="border: 1px solid black; padding: 5px;">John Smith</td>
+              <td style="border: 1px solid black; padding: 5px;">2051-1232123</td>
+              <td style="border: 1px solid black; padding: 5px;">2023/12/12</td>
+              <td style="border: 1px solid black; padding: 5px;">N36</td>
+
+          </tr>
+          <tr>
+              <td style="border: 1px solid black; padding: 5px;">Henry Ken</td>
+              <td style="border: 1px solid black; padding: 5px;">2052-1235666</td>
+              <td style="border: 1px solid black; padding: 5px;">2027/01/30</td>
+              <td style="border: 1px solid black; padding: 5px;">N37</td>
+
+          </tr>
+          <tr>
+              <td style="border: 1px solid black; padding: 5px;">Roxanne Ara</td>
+              <td style="border: 1px solid black; padding: 5px;">2053-1235423</td>
+              <td style="border: 1px solid black; padding: 5px;">2027/04/23</td>
+              <td style="border: 1px solid black; padding: 5px;">N38</td>
+
+          </tr>
+          <tr>
+              <td style="border: 1px solid black; padding: 5px;">Billy James</td>
+              <td style="border: 1px solid black; padding: 5px;">2054-1234544</td>
+              <td style="border: 1px solid black; padding: 5px;">2026/08/23</td>
+              <td style="border: 1px solid black; padding: 5px;">N39</td>
+
+          </tr>
+          <tr>
+              <td style="border: 1px solid black; padding: 5px;">Ken Alvin</td>
+              <td style="border: 1px solid black; padding: 5px;">Lyca Cupa  Lastimoso</td>
+              <td style="border: 1px solid black; padding: 5px;">2025/05/02</td>
+              <td style="border: 1px solid black; padding: 5px;">N40</td>
+          </tr>
+          <tr>
+              <td style="border: 1px solid black; padding: 5px;">John Jones</td>
+              <td style="border: 1px solid black; padding: 5px;">2056-1238653</td>
+              <td style="border: 1px solid black; padding: 5px;">2025/01/03</td>
+              <td style="border: 1px solid black; padding: 5px;">N41</td>
+
+          </tr>
+            </table>
+        </div>
+        </div>
+        <div class="popup-form" id="popupForm4">
+          <span class="popup-close-button" onclick="closePopup('4')">&#10006;</span>
+          <h2 >List of Driver's Pending Violation</h2> 
+        <h3 style="text-align: center; margin-bottom: 10px;">Total Driver's: 5</h3>
+        <div style="overflow: auto; max-height: 300px;">
+            <table style="margin: 0 auto; border-collapse: collapse; border: 1px solid black; width: 100%;">
+                <tr>
+                    <th style="text-align: left; border: 1px solid black; padding: 5px;">Driver Names</th>
+                    <th style="text-align: left; border: 1px solid black; padding: 5px;">Driver Violation</th>
+                </tr>
+                <!-- Sample Students (Replace with your data) -->
+                <tr>
+                    <td style="border: 1px solid black; padding: 5px;">Gorgonio Bradly Vince</td>
+                    <td style="border: 1px solid black; padding: 5px;">092 Fake ID/Permit</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 5px;">Gallaron Daniel Keith</td>
+                    <td style="border: 1px solid black; padding: 5px;">128J No Motorcycle Helmet</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 5px;">John Paul Smith</td>
+                    <td style="border: 1px solid black; padding: 5px;">023 Reckless Driving</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 5px;">Bautista Carlo Syd</td>
+                    <td style="border: 1px solid black; padding: 5px;">064 No Parking</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 5px;">John Smith</td>
+                    <td style="border: 1px solid black; padding: 5px;">012 OverSpeeding</td>
+                </tr>
+                
+            </table>
+        </div>
+          <!-- Add your form elements for button 4 here -->
+        </div>
+      </div>
+
+
+      <style>
+        .popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+
+  /* Styles for the pop-up form */
+  .popup-form {
+    display: none;
+    background: #fff;
+    width: 50%;
+    height:60%;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1000;
+  }
+
+  /* Styles for the close button within the pop-up */
+  .popup-close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+      </style>
+    
+      <script>
+        // JavaScript function to open the pop-up
+        function openPopup(buttonNumber) {
+          document.getElementById('popupOverlay').style.display = 'flex';
+          document.getElementById('popupForm' + buttonNumber).style.display = 'block';
+          document.getElementById('popupTitle' + buttonNumber).textContent = 'Pop-up Form ' + buttonNumber;
+        }
+    
+        // JavaScript function to close the pop-up
+        function closePopup(buttonNumber) {
+          document.getElementById('popupOverlay').style.display = 'none';
+          document.getElementById('popupForm' + buttonNumber).style.display = 'none';
+        }
+    
+        // Add click event listeners to the buttons with the "popup-button" class
+        const popupButtons = document.querySelectorAll('.popup-button');
+        popupButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const popupNumber = button.getAttribute('data-popup');
+            openPopup(popupNumber);
+          });
+        });
+      </script>
+
+
+      
+
+
+     
+
+      
+    
+      <script src="index.js"></script>
+</body>
+</html>
